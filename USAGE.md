@@ -86,9 +86,9 @@ In your template, you can use the data like this:
   <table>
     <caption>{{ 'orders.my'|trans }}</caption>
     <thead>
-        <th>{{ 'fields.document_identification'|trans }}</th>
-        <th>{{ 'fields.date_of_issue'|trans }}</th>
-        <th>{{ 'fields.price'|trans }}</th>
+      <th>{{ 'fields.document_identification'|trans }}</th>
+      <th>{{ 'fields.date_of_issue'|trans }}</th>
+      <th>{{ 'fields.price'|trans }}</th>
     </thead>
     <tbody>
       {% if orders.Items|length > 0 %}
