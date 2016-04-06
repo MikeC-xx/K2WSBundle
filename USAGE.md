@@ -1,4 +1,6 @@
 # Usage
+You can use K2WSBundle to retrieve, post and put data to K2 Web Service.
+
 ## Retrieve data
 You can retrive data using k2_ws.data service in your controllers. Data is serialized into K2WSBundle\Entity\DataObject class.
 
@@ -37,7 +39,7 @@ public function myAction()
     );
 ```
 
-## Use data in template
+### Use data in template
 After your data has been retrieved, you can pass it to your template:
 
 ```php
@@ -92,3 +94,8 @@ In your template, you can use the data like this:
   </table>
 {% endblock %}
 ```
+## Post data
+> TODO
+
+## Put data
+> TODO
