@@ -34,7 +34,7 @@ Next, choose what kind of data you want to get. Use can use these methods:
 
 Argument $params is an key-value array.
 
-For example, retrieve a list of orders where ContactPersonId is equal to currently logged in user:
+For example, retrieve a list of orders where ContactPersonId is equal to currently logged in user id:
 
 ```php
 // src/AppBundle/Controller/YourController.php
