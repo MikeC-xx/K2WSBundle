@@ -60,4 +60,4 @@ services:
 If you would like to configure your app to use form login authenticator and web service user provider, please check out [security](SECURITY.md) documentation.
 
 ### That's it!
-The bundle is installed. Check out the [usage section](USAGE.md) to find out how to use the bundle or have a look at [examples](EXAMPLES.md).
+The bundle is installed. Check out the [usage section](USAGE.md) to find out how to use the bundle.
