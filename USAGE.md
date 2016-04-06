@@ -12,7 +12,7 @@ parameters:
 framework:
     ...
 
-    translator:      { fallbacks: ["%locale%"] }
+    translator: { fallbacks: ["%locale%"] }
 ```
 
 ## Retrieve data
@@ -101,7 +101,7 @@ In your template, you can use the data like this:
         {% endfor %}
       {% else %}
         <tr>
-          <td colspan="3">{{ 'orders.none_found' }}</td>
+          <td colspan="3">{{ 'orders.none_found'|trans }}</td>
         </tr>
       {% endif %}
     </tbody>
