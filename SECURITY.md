@@ -47,17 +47,17 @@ Add these services to your services.yml file.
 services:
   ...
   
-  k2_ws.webservice_user_provider:
-    class: K2WSBundle\Security\User\WebserviceUserProvider
-    arguments:
-      - "@k2_ws.core"
-      - "@k2_ws.data"
+    k2_ws.webservice_user_provider:
+        class: K2WSBundle\Security\User\WebserviceUserProvider
+        arguments:
+            - "@k2_ws.core"
+            - "@k2_ws.data"
 
-  k2_ws.form_login_authenticator:
-    class: K2WSBundle\Security\FormLoginAuthenticator
-    arguments:
-      - "@router"
-      - homepage # default route name
+    k2_ws.form_login_authenticator:
+        class: K2WSBundle\Security\FormLoginAuthenticator
+        arguments:
+            - "@router"
+            - homepage # default route name
 ```
 
 **Note:**
@@ -68,25 +68,25 @@ Add a provider, encoder, main firewall and access control to your security.yml f
 ```yml
 # app/config/security.yml
 security:
-  providers:
-    k2_ws:
-      id: k2_ws.webservice_user_provider
+    providers:
+        k2_ws:
+            id: k2_ws.webservice_user_provider
 
-  encoders:
-    Symfony\Component\Security\Core\User\User: plaintext
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
     
-  firewalls:
-    ...
+    firewalls:
+        ...
     
-    main:
-      anonymous: ~
-      guard:
-        authenticators:
-          - k2_ws.form_login_authenticator
+        main:
+            anonymous: ~
+            guard:
+                authenticators:
+                    - k2_ws.form_login_authenticator
   
-  access_control:
-    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/secret-content, roles: ROLE_USER } # add your secret routes here
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/secret-content, roles: ROLE_USER } # add your secret routes here
 ```
 **Note:**
 > Every K2 Web Service user has a ROLE_USER role by default.
