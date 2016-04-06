@@ -7,7 +7,6 @@ use Symfony\Component\Security\Core\User\EquatableInterface;
 
 class WebserviceUser implements UserInterface, EquatableInterface
 {
-
     /** ContactPersonId */
     private $id;
 
