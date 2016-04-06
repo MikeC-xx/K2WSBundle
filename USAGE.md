@@ -1,6 +1,20 @@
 # Usage
 You can use K2WSBundle to retrieve, post and put data to K2 Web Service.
 
+K2WSBundle comes with Czech (cs) and English (en) translations for the examples given in this documentation. You have to enable translator in your config.yml file:
+
+```yml
+# app/config/config.yml
+parameters:
+    locale: cs # set this to cs or en
+    ...
+
+framework:
+    ...
+
+    translator:      { fallbacks: ["%locale%"] }
+```
+
 ## Retrieve data
 You can retrive data using k2_ws.data service in your controllers. Data is serialized into K2WSBundle\Entity\DataObject class.
 
@@ -70,11 +84,11 @@ In your template, you can use the data like this:
 
 {% block body %}
   <table>
-    <caption>My Orders</caption>
+    <caption>{{ 'orders.my'|trans }}</caption>
     <thead>
-      <th>Document ID</th>
-      <th>Date of Issue</th>
-      <th>Price</th>
+        <th>{{ 'fields.document_identification'|trans }}</th>
+        <th>{{ 'fields.date_of_issue'|trans }}</th>
+        <th>{{ 'fields.price'|trans }}</th>
     </thead>
     <tbody>
       {% if orders.Items|length > 0 %}
@@ -87,7 +101,7 @@ In your template, you can use the data like this:
         {% endfor %}
       {% else %}
         <tr>
-          <td colspan="3">No orders were found.</td>
+          <td colspan="3">{{ 'orders.none_found' }}</td>
         </tr>
       {% endif %}
     </tbody>
