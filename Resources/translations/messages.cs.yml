@@ -1,0 +1,19 @@
+security:
+    login:
+        username: "Uživatelské jméno"
+        password: Heslo
+        submit: Přihlásit
+
+layout:
+    login: Přihlášení
+    logout: Odhlásit
+    logged_in_as: "Přihlášený jako:"
+
+orders:
+    my: "Moje objednávky"
+    none_found: "Nebyly nalezeny žádné objednávky"
+
+fields:
+    document_identification: "Doklad"
+    date_of_issue: "Datum vystavení"
+    price: Cena

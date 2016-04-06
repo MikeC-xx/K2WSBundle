@@ -1,0 +1,19 @@
+security:
+    login:
+        username: Username
+        password: Password
+        submit: Login
+
+layout:
+    login: Login
+    logout: Logout
+    logged_in_as: "Logged in as:"
+
+orders:
+    my: My orders
+    none_found: "No orders were found"
+
+fields:
+    document_identification: "Document ID"
+    date_of_issue: "Date of Issue"
+    price: Price
