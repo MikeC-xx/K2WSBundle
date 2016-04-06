@@ -26,12 +26,12 @@ Configure connection to K2 Web Service:
 ```yaml
 # app/config/config.yml
 k2_ws:
-  host: go.k2.cz # webservice host name
-  name: restservicedemo # webservice instance name
-  port: ~ # default is 80
-  secure: ~ # if true => using https, default is false => using http
-  username: DEMO3 # anonymous user login
-  password: 1234 # anonymous user password
+    host: go.k2.cz # webservice host name
+    name: restservicedemo # webservice instance name
+    port: ~ # default is 80
+    secure: ~ # if true => using https, default is false => using http
+    username: DEMO3 # anonymous user login
+    password: 1234 # anonymous user password
 ```
 
 **Note:**
