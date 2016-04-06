@@ -17,14 +17,16 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
      * @var UrlGeneratorInterface
      */
     private $urlGenerator;
+    private $defaultSuccessRedirectUrl;
 
     /**
      * @param UserPasswordEncoderInterface $encoder
      * @param UrlGeneratorInterface $urlGenerator
      */
-    public function __construct(UrlGeneratorInterface $urlGenerator)
+    public function __construct(UrlGeneratorInterface $urlGenerator, $defaultSuccessRedirectUrl)
     {
         $this->urlGenerator = $urlGenerator;
+        $this->defaultSuccessRedirectUrl = $defaultSuccessRedirectUrl;
     }
 
     /**
@@ -40,7 +42,7 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
      */
     protected function getDefaultSuccessRedirectUrl()
     {
-        return $this->urlGenerator->generate('homepage');
+        return $this->urlGenerator->generate($this->defaultSuccessRedirectUrl);
     }
 
     /**
@@ -48,7 +50,7 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
      */
     public function getCredentials(Request $request)
     {
-        if ($request->getPathInfo() != '/login_check') {
+        if ($request->get('_route') != 'security_login_check') {
             return;
         }
 
