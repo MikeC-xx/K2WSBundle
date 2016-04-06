@@ -1,5 +1,5 @@
 # K2WSBundle
-Symfony bundle to ease communication with K2 Web Service
+Symfony bundle to ease communication with K2 Web Service.
 
 ## Installation
 
