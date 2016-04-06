@@ -1,5 +1,6 @@
 # Configure security
 K2WSBundle allows you to authenticate as standard K2 Web Service User in your symfony application.
+
 User object holds this data:
 ```php
 // K2WSBundle/Security/WebserviceUser.php
