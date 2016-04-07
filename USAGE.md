@@ -20,8 +20,8 @@ You can retrive data using k2_ws.data service in your controllers. Data is seria
 
 First, get service from container:
 ```php
-// src/AppBundle/Controller/YourController.php
-public function myAction()
+// src/AppBundle/Controller/DefaultController.php
+public function homepageAction()
 {
     $K2WSData = $this->get('k2_ws.data');
 }
@@ -37,8 +37,8 @@ Argument $params is an key-value array.
 For example, retrieve a list of orders where ContactPersonId is equal to currently logged in user id:
 
 ```php
-// src/AppBundle/Controller/YourController.php
-public function myAction()
+// src/AppBundle/Controller/DefaultController.php
+public function homepageAction()
 {
     $K2WSData = $this->get('k2_ws.data');
     
@@ -51,6 +51,7 @@ public function myAction()
             'conditions' => ['ContactPersonId;EQ;' . $userId]
         ]
     );
+}
 ```
 
 ### Use data in template
@@ -76,7 +77,7 @@ public function homepageAction()
 }
 ```
 
-In your template, you can use the data like this:
+In your template, you can iterate over data object list items and display it in a table:
 ```twig
 {# app/Resources/views/default/index.html.twig #}
 
