@@ -32,7 +32,7 @@ Next, choose what kind of data you want to get. Use can use these methods:
 1. getDataObjectList($className, $params = null)
 1. getDataObject($className, $primaryKey, $params = null)
 
-Argument $params is an key-value array.
+Argument $params is a key-value array where key is standard K2 Web Service parameter, for example fields, conditions, pageSize, etc.
 
 For example, retrieve a list of orders where ContactPersonId is equal to currently logged in user id:
 
