@@ -34,7 +34,7 @@ Next, choose what kind of data you want to get. Use can use these methods:
 
 Argument $params is a key-value array where key is standard K2 Web Service parameter, for example fields, conditions, pageSize, etc.
 
-For example, retrieve a list of orders where ContactPersonId is equal to currently logged in user id:
+In the code below we retrieve a list of orders where ContactPersonId is equal to currently logged in user's id:
 
 ```php
 // src/AppBundle/Controller/DefaultController.php
