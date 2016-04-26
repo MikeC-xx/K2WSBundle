@@ -83,6 +83,9 @@ security:
             guard:
                 authenticators:
                     - k2_ws.form_login_authenticator
+            logout:
+                path: security_logout
+                target: security_login
   
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
