@@ -17,3 +17,5 @@ fields:
     document_identification: "Doklad"
     date_of_issue: "Datum vystavení"
     price: Cena
+
+"Invalid credentials.": Neplatné přihlašovací údaje.

@@ -52,9 +52,7 @@ class WebserviceUserProvider implements UserProviderInterface
             return new WebserviceUser($id, $username, $password, $firstName, $lastName, $timeStamp, ['ROLE_USER']);
         }
 
-        throw new BadCredentialsException(
-            sprintf('Invalid credentials.', $username)
-        );
+        throw new BadCredentialsException();
     }
 
     public function refreshUser(UserInterface $user)
