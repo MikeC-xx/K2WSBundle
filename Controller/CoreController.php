@@ -35,13 +35,13 @@ class CoreController
     public function getAuthorizationHeader($url, $username = null, $password = null)
     {
         if (!$username || !$password) {
-            $user = $this->tokenStorage->getToken()->getUser();
-            if ($user) {
-                $username = $user->getUsername();
-                $password = $user->getPassword();
+            $token = $this->tokenStorage->getToken();
+            if ($token) {
+                $username = $token->getUser()->getUsername();
+                $password = $token->getUser()->getPassword();
             } else {
-                $username = $config['username'];
-                $password = $config['password'];
+                $username = $this->config['username'];
+                $password = $this->config['password'];
             }
         }
 
