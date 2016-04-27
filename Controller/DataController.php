@@ -48,7 +48,7 @@ class DataController
         $url = $this->getDataUrl($dataObject['DOClassName']);
 
         $ch = $this->core->getCurlHandle($url);
-        curl_setopt($ch, CURLOPT_POST);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataObject->getJSON());
         $data = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -65,8 +65,8 @@ class DataController
         $url = $this->getDataUrl($dataObject['DOClassName'], $primaryKey);
 
         $ch = $this->core->getCurlHandle($url);
-        curl_setopt($ch, CURLOPT_PUT);
-        curl_setopt($ch, CURLOPT_PUTFIELDS, $dataObject->getJSON());
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $dataObject->getJSON());
         $data = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
