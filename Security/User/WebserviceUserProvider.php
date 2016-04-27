@@ -82,4 +82,14 @@ class WebserviceUserProvider implements UserProviderInterface
     {
         return [];
     }
+
+    public function getK2WSData()
+    {
+        return $this->data;
+    }
+
+    public function getK2WSCore()
+    {
+        return $this->core;
+    }
 }
