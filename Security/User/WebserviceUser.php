@@ -31,7 +31,10 @@ class WebserviceUser implements UserInterface, EquatableInterface
     /** User roles */
     private $roles;
 
-    public function __construct($id, $username, $password, $firstName, $lastName, $timeStamp, array $roles)
+    /** Extra data */
+    private $extraData;
+
+    public function __construct($id, $username, $password, $firstName, $lastName, $timeStamp, array $roles, array $extraData)
     {
         $this->id = $id;
         $this->username = $username;
@@ -41,6 +44,12 @@ class WebserviceUser implements UserInterface, EquatableInterface
         $this->lastName = $lastName;
         $this->timeStamp = $timeStamp;
         $this->roles = $roles;
+        $this->extraData = $extraData;
+    }
+
+    public function getExtraData()
+    {
+        return $this->extraData;
     }
 
     public function getRoles()

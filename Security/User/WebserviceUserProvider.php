@@ -48,8 +48,10 @@ class WebserviceUserProvider implements UserProviderInterface
             $firstName = $user['FieldValues']['Name'];
             $lastName = $user['FieldValues']['Surname'];
             $timeStamp = $user['FieldValues']['TimeStamp'];
+            $roles = $this->getUserRoles($id);
+            $extraData = $this->getUserExtraData($id);
 
-            return new WebserviceUser($id, $username, $password, $firstName, $lastName, $timeStamp, ['ROLE_USER']);
+            return new WebserviceUser($id, $username, $password, $firstName, $lastName, $timeStamp, $roles, $extraData);
         }
 
         throw new BadCredentialsException();
@@ -69,5 +71,15 @@ class WebserviceUserProvider implements UserProviderInterface
     public function supportsClass($class)
     {
         return $class === 'K2WSBundle\Security\User\WebserviceUser';
+    }
+
+    public function getUserRoles($id)
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getUserExtraData($id)
+    {
+        return [];
     }
 }
