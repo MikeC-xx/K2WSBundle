@@ -1,3 +1,11 @@
 {
-    "name": "MikeC-xx/K2WSBundle"
+    "name": "k2/k2ws-bundle",
+    "authors": [
+        {
+            "name": "Michael Cenker",
+            "email": "michael.cenker@k2ol.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
 }
