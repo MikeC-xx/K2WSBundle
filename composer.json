@@ -9,6 +9,6 @@
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
-        "psr-4": { "K2\\K2WSBundle\\": "" }
+        "psr-0": { "K2\\K2WSBundle\\": "" }
     }
 }
