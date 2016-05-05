@@ -48,8 +48,9 @@ class WebserviceUserProvider implements UserProviderInterface
             $firstName = $user['FieldValues']['Name'];
             $lastName = $user['FieldValues']['Surname'];
             $timeStamp = $user['FieldValues']['TimeStamp'];
-            $roles = $this->getUserRoles($id);
-            $extraData = $this->getUserExtraData($id);
+            $data = $this->getUserData($id);
+            $roles = $data === null ? 'ROLE_USER' : $data['roles'];
+            $extraData = $data === null ? null : $data['extraData'];;
 
             return new WebserviceUser($id, $username, $password, $firstName, $lastName, $timeStamp, $roles, $extraData);
         }
@@ -73,14 +74,9 @@ class WebserviceUserProvider implements UserProviderInterface
         return $class === 'K2WSBundle\Security\User\WebserviceUser';
     }
 
-    public function getUserRoles($id)
+    public function getUserData($id)
     {
-        return ['ROLE_USER'];
-    }
-
-    public function getUserExtraData($id)
-    {
-        return [];
+        return null;
     }
 
     public function getK2WSData()
