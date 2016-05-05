@@ -1,8 +1,3 @@
 {
-    "name": "MikeC-xx/K2WSBundle",
-    "version": "master",
-    "dist": {
-        "url": "https://github.com/MikeC-xx/K2WSBundle/archive/master.zip",
-        "type": "zip"
-    }
+    "name": "MikeC-xx/K2WSBundle"
 }
