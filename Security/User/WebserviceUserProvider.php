@@ -6,9 +6,9 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use K2WSBundle\Controller\CoreController;
-use K2WSBundle\Controller\DataController;
-use K2WSBundle\Entity\DataObject;
+use K2\K2WSBundle\Controller\CoreController;
+use K2\K2WSBundle\Controller\DataController;
+use K2\K2WSBundle\Entity\DataObject;
 
 class WebserviceUserProvider implements UserProviderInterface
 {
@@ -71,7 +71,7 @@ class WebserviceUserProvider implements UserProviderInterface
 
     public function supportsClass($class)
     {
-        return $class === 'K2WSBundle\Security\User\WebserviceUser';
+        return $class === 'K2\K2WSBundle\Security\User\WebserviceUser';
     }
 
     public function getUserData($id)
