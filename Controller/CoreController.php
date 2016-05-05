@@ -6,6 +6,11 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 class CoreController
 {
+    const HTTP_STATUS_OK = 200;
+    const HTTP_METHOD_GET = 'GET';
+    const HTTP_METHOD_POST = 'POST';
+    const HTTP_METHOD_PUT = 'PUT';
+
     private $config;
     private $tokenStorage;
 
