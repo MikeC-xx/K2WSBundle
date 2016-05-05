@@ -1,6 +1,6 @@
 <?php
 
-namespace K2WSBundle\DependencyInjection;
+namespace K2\K2WSBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

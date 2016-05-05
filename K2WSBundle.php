@@ -1,6 +1,6 @@
 <?php
 
-namespace K2WSBundle;
+namespace K2\K2WSBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

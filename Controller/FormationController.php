@@ -1,9 +1,9 @@
 <?php
 
-namespace K2WSBundle\Controller;
+namespace K2\K2WSBundle\Controller;
 
-use K2WSBundle\Entity\DataObject;
-use K2WSBundle\Controller\CoreController as Core;
+use K2\K2WSBundle\Entity\DataObject;
+use K2\K2WSBundle\Controller\CoreController as Core;
 
 class FormationController
 {

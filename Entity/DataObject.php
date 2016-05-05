@@ -1,6 +1,6 @@
 <?php
 
-namespace K2WSBundle\Entity;
+namespace K2\K2WSBundle\Entity;
 
 class DataObject extends \ArrayObject
 {

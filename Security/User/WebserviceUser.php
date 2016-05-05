@@ -1,6 +1,6 @@
 <?php
 
-namespace K2WSBundle\Security\User;
+namespace K2\K2WSBundle\Security\User;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\EquatableInterface;

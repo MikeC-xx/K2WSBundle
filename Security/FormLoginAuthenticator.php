@@ -1,6 +1,6 @@
 <?php
 
-namespace K2WSBundle\Security;
+namespace K2\K2WSBundle\Security;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

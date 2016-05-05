@@ -1,6 +1,6 @@
 <?php
 
-namespace K2WSBundle\Controller;
+namespace K2\K2WSBundle\Controller;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
