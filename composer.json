@@ -7,8 +7,8 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},    
+    "require": {},
     "autoload": {
-        "psr-4": { "K2\\K2WSBundle\\": "" }
+        "psr-4": { "K2WSBundle\\": "" }
     }
 }
