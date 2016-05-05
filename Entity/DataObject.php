@@ -51,6 +51,8 @@ class DataObject extends \ArrayObject
                     foreach ($value as $fieldKey => $fieldValue) {
                         if (is_array($fieldValue)) {
                             $result['FieldValues'][] = ['Name' => $fieldKey, 'Value' => $this->getExtendedDataArray($fieldValue)];
+                        } else if ($fieldValue instanceof \DateTime) {
+                            $result['FieldValues'][] = ['Name' => $fieldKey, 'Value' => '/Date(' . $fieldValue->format('U') . '000+0200)/'];
                         } else {
                             $result['FieldValues'][] = ['Name' => $fieldKey, 'Value' => $fieldValue];
                         }
@@ -58,6 +60,8 @@ class DataObject extends \ArrayObject
                 } else {
                     $result[$key] = $this->getExtendedDataArray($value);
                 }
+            } else if ($value instanceof \DateTime) {
+                $result[$key] = '/Date(' . $value->format('U') . '000+0200)/';
             } else {
                 $result[$key] = $value;
             }
