@@ -10,6 +10,16 @@ class DataObject extends \ArrayObject
         foreach ($array as $key => $value) {
             $this[$key] = $value;
         }
+
+        if (array_key_exists('NextPageURL', $this)) {
+            parse_str($this['NextPageURL'], $nextPageArray);
+            $this['NextPageURLParams'] = $nextPageArray;
+        }
+
+        if (array_key_exists('LastPageURL', $this)) {
+            parse_str($this['LastPageURL'], $nextPageArray);
+            $this['LastPageURLParams'] = $nextPageArray;
+        }
     }
 
     private function getSimpleDataArray($array)
