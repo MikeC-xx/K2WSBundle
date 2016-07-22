@@ -6,7 +6,7 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use K2\K2WSBundle\Controller\CoreController as Core;
+use K2\K2WSBundle\Controller\CoreController;
 use K2\K2WSBundle\Controller\DataController;
 use K2\K2WSBundle\Entity\DataObject;
 
@@ -41,7 +41,7 @@ class WebserviceUserProvider implements UserProviderInterface
         $data = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        if ($data && $httpCode === Core::HTTP_STATUS_OK) {
+        if ($data && $httpCode === CoreController::HTTP_STATUS_OK) {
             $user = new DataObject($data);
 
             $id = $user['FieldValues']['ContactPersonId'];
