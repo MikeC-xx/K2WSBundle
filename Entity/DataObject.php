@@ -12,13 +12,19 @@ class DataObject extends \ArrayObject
         }
 
         if (array_key_exists('NextPageURL', $this)) {
-            parse_str($this['NextPageURL'], $nextPageArray);
-            $this['NextPageURLParams'] = $nextPageArray;
+            $url = explode('?', $this['NextPageURL']);
+            if (count($url) > 1) {
+                parse_str($url[1], $nextPageArray);
+                $this['NextPageURLParams'] = $nextPageArray;
+            }
         }
 
         if (array_key_exists('LastPageURL', $this)) {
-            parse_str($this['LastPageURL'], $nextPageArray);
-            $this['LastPageURLParams'] = $nextPageArray;
+            $url = explode('?', $this['LastPageURL']);
+            if (count($url) > 1) {
+                parse_str($url[1], $nextPageArray);
+                $this['LastPageURLParams'] = $nextPageArray;
+            }
         }
     }
 
