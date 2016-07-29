@@ -41,7 +41,8 @@ class DataObject extends \ArrayObject
                             $result['FieldValues'][$_key] = $this->getSimpleDataArray($_value);
                         } else if (preg_match('/(\d{10})(\d{3})([\+\-]\d{4})/', $_value, $matches)) {
                             $result['FieldValues'][$_key] = \DateTime::createFromFormat('U.u', vsprintf('%2$s.%3$s', $matches), new \DateTimeZone(vsprintf('%4$s', $matches)));
-
+                        } else if (in_array($_key, ['NextPageURL', 'PrevPageURL', 'FirstPageURL', 'LastPageURL'])) {
+                            $result['FieldValues'][$_key] = urlencode($_value);
                         } else {
                             $result['FieldValues'][$_key] = $_value;
                         }

@@ -93,10 +93,10 @@ class DataController
             if (is_array($value)) {
                 $paramValue = implode(',', $value);
             } else {
-                $paramValue = $key == 'pageState' ? $value : urlencode($value);
+                $paramValue = $value;
             }
 
-            $url .= (strpos($url, '?') === false ? '?' : '&') . $key . '=' . $paramValue;
+            $url .= (strpos($url, '?') === false ? '?' : '&') . $key . '=' . urlencode($paramValue);
         }
 
         return $url;
