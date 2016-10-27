@@ -50,7 +50,7 @@ class WebserviceUserProvider implements UserProviderInterface
             $timeStamp = $user['FieldValues']['TimeStamp'];
             $data = $this->getUserData($id);
             $roles = $data === null ? ['ROLE_USER'] : $data['roles'];
-            $extraData = $data === null ? null : $data['extraData'];;
+            $extraData = $data === null ? null : $data['extraData'];
 
             return new WebserviceUser($id, $username, $password, $firstName, $lastName, $timeStamp, $roles, $extraData);
         }
