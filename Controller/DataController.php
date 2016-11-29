@@ -9,6 +9,29 @@ class DataController
 {
     private $core;
 
+    const FILTER_OPERATOR_UNKNOWN = 0;
+    const FILTER_OPERATOR_LESS = 1;
+    const FILTER_OPERATOR_LESS_OR_EQUAL = 2;
+    const FILTER_OPERATOR_EQUAL = 3;
+    const FILTER_OPERATOR_NOT_EQUAL = 4;
+    const FILTER_OPERATOR_GREATER_OR_EQUAL = 5;
+    const FILTER_OPERATOR_GREATER = 6;
+    const FILTER_OPERATOR_LIKE = 7;
+    const FILTER_OPERATOR_BETWEEN = 8;
+    const FILTER_OPERATOR_IN = 9;
+    const FILTER_OPERATOR_EMPTY = 10;
+
+    const LIKE_STYLE_ANYWHERE = 0;
+    const LIKE_STYLE_BEGINNING = 1;
+    const LIKE_STYLE_STRICT = 2;
+
+    const VALUE_TYPE_CONSTANT = 0;
+    const VALUE_TYPE_EXPRESSION = 1;
+    const VALUE_TYPE_FIELD = 2;
+
+    const CONDITION_TYPE_FIELD = 'FieldCondition:K2.Data';
+    const CONDITION_TYPE_NODE = 'NodeCondition:K2.Data';
+
     public function __construct(CoreController $core)
     {
         $this->core = $core;
@@ -26,6 +49,31 @@ class DataController
             return new DataObject($data);
         } else {
             throw new \Exception('Could not get data object list: ' . $httpCode . ' ' . $data);
+        }
+    }
+
+    public function getDataObjectListBySelection($className, array $conditions = [], $selectionId = null, $topCount = null, $parameters = null)
+    {
+        $url = $this->core->getBaseUrl() . '/Data/GetListBySelection/' . $className;
+
+        $selectionData = [
+            'SelectionId' => $selectionId,
+            'TopCount' => $topCount,
+            'conditions' => $conditions,
+            'parameters' => $parameters
+        ];
+
+        $ch = $this->core->getCurlHandle($url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, Core::HTTP_METHOD_POST);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($selectionData));
+
+        $data = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($data && $httpCode === Core::HTTP_STATUS_OK) {
+            return new DataObject($data);
+        } else {
+            throw new \Exception('Could not get data object list by selection: ' . $httpCode . ' ' . $data);
         }
     }
 
