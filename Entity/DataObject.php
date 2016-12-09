@@ -6,7 +6,7 @@ class DataObject extends \ArrayObject
 {
     public function __construct($json)
     {
-        $array = $this->getSimpleDataArray(json_decode($json, true));
+        $array = $this->getSimpleDataArray(json_decode($json, true, 512, JSON_BIGINT_AS_STRING));
         foreach ($array as $key => $value) {
             $this[$key] = $value;
         }
