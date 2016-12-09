@@ -42,13 +42,13 @@ Configure symfony services:
 # app/config/services.yml
 services:
     k2_ws.core:
-        class: K2WSBundle\Controller\CoreController
+        class: K2\K2WSBundle\Controller\CoreController
         arguments:
             - "%k2_ws.config%"
             - "@security.token_storage"
 
     k2_ws.data:
-        class: K2WSBundle\Controller\DataController
+        class: K2\K2WSBundle\Controller\DataController
         arguments:
             - "@k2_ws.core"
 ```
