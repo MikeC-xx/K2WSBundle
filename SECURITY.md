@@ -48,13 +48,13 @@ services:
   ...
   
     k2_ws.webservice_user_provider:
-        class: K2WSBundle\Security\User\WebserviceUserProvider
+        class: K2\K2WSBundle\Security\User\WebserviceUserProvider
         arguments:
             - "@k2_ws.core"
             - "@k2_ws.data"
 
     k2_ws.form_login_authenticator:
-        class: K2WSBundle\Security\FormLoginAuthenticator
+        class: K2\K2WSBundle\Security\FormLoginAuthenticator
         arguments:
             - "@router"
             - homepage # default route name
