@@ -15,7 +15,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new K2WSBundle\K2WSBundle(),
+        new K2\K2WSBundle\K2WSBundle(),
         // ...
     );
 }
